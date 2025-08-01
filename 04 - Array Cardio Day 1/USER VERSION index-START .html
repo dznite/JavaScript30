@@ -112,21 +112,28 @@
     //count instance of each element
     //showcase count in new array
 
-    let unique = data.filter((element, currentIndex, currentArray) => data.indexOf(element) === currentIndex);
-    console.log(unique);
-    console.log(unique.length);
+    // let unique = data.filter((element, currentIndex, currentArray) => data.indexOf(element) === currentIndex);
+    // console.log(unique);
+    // console.log(unique.length);
 
-    let carCount = data.reduce((count, item) => (item === 'car' ? count + 1 : count ),0);
-    let truckCount = data.reduce((count, item) => (item === 'truck' ? count + 1 : count ),0);
-    let bikeCount = data.reduce((count, item) => (item === 'bike' ? count + 1 : count ),0);
-    let walkCount = data.reduce((count, item) => (item === 'walk' ? count + 1 : count ),0);
-    let vanCount = data.reduce((count, item) => (item === 'van' ? count + 1 : count ),0);
+    // let carCount = data.reduce((count, item) => (item === 'car' ? count + 1 : count ),0);
+    // let truckCount = data.reduce((count, item) => (item === 'truck' ? count + 1 : count ),0);
+    // let bikeCount = data.reduce((count, item) => (item === 'bike' ? count + 1 : count ),0);
+    // let walkCount = data.reduce((count, item) => (item === 'walk' ? count + 1 : count ),0);
+    // let vanCount = data.reduce((count, item) => (item === 'van' ? count + 1 : count ),0);
 
-    let totalInstance = [`Car: ${carCount}`,`Truck: ${truckCount}`,`Bike: ${bikeCount}`,`Walk: ${walkCount}`,`Van: ${vanCount}` ]
-    console.table(totalInstance);
+    // let totalInstance = [`Car: ${carCount}`,`Truck: ${truckCount}`,`Bike: ${bikeCount}`,`Walk: ${walkCount}`,`Van: ${vanCount}` ]
+    // console.table (totalInstance);
     
-   
+   let tally = data.reduce(function(obj,value){
+    if (!obj[value]){
+      obj[value] = 0;
+    }
+    obj[value]++;
+    return obj;
+   }, {})
 
+   console.log(tally);
     
   
   </script>
